@@ -10,7 +10,9 @@
   <div class="courses">
 
     <course-card *ngFor="let course of (courses$ | async)"
-                 [course]="course">
+          (courseChanged)="save($event)"
+          type="beginner"
+          [course]="course">
 
       <course-image [src]="course.iconUrl"></course-image>
 
